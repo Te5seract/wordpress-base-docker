@@ -26,6 +26,7 @@ services:
   wordpress:
     image: wordpress:${WORDPRESS_VERSION}
     volumes:
+      - ./wordpress:/var/www/html
       - ./wordpress:/public/www
     links:
       - mysql
