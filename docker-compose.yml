@@ -10,7 +10,7 @@ services:
       - wordpress
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-      - ./wordpress:/public/www
+      - ./wordpress:/var/www/html
 
   mysql:
     image: mysql:${MYSQL_VERSION} 
@@ -27,7 +27,6 @@ services:
     image: wordpress:${WORDPRESS_VERSION}
     volumes:
       - ./wordpress:/var/www/html
-      - ./wordpress:/public/www
     links:
       - mysql
     ports:
